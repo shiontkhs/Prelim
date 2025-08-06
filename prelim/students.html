@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Attendance Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding-top: 70px; /* space for header */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Header/Nav Bar */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background-color: #333;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      z-index: 1000;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      padding: 10px 20px;
+      border-radius: 8px;
+      transition: background-color 0.3s;
+    }
+
+    .navbar a:hover {
+      background-color: #555;
+    }
+
+    .dashboard {
+      display: flex;
+      gap: 40px;
+      align-items: flex-start;
+    }
+
+    .cards {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .card {
+      width: 250px;
+      height: 150px;
+      border-radius: 20px;
+      color: black;
+      margin: 15px 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      position: relative;
+    }
+
+    .students { background-color: #6ec1e4; }
+    .present  { background-color: #77dd77; }
+    .absent   { background-color: #ff6961; }
+
+    .card-number {
+      position: absolute;
+      top: 15px;
+      left: 20px;
+      font-size: 20px;
+    }
+
+    .see-more {
+      position: absolute;
+      bottom: 15px;
+      text-decoration: underline;
+      font-size: 14px;
+      color: black;
+    }
+
+    table {
+      background-color: white;
+      border-collapse: collapse;
+      width: 800px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      overflow: hidden;
+      margin-top: 30px;
+    }
+
+    th, td {
+      padding: 12px 15px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #333;
+      color: white;
+    }
+
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+
+    /* Department Section Styles */
+    .department {
+      margin-top: 60px;
+      text-align: center;
+    }
+
+    .dept-label {
+      font-size: 50px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .dept-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .dept-container img {
+      width: 400px;
+      height: 400px;
+      object-fit: cover;
+    }
+
+    .arrow {
+      font-size: 50px;
+      cursor: pointer;
+      user-select: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    .arrow:hover {
+      color: blue;
+    }
+
+    .dept-name {
+      margin-top: 10px;
+      font-size: 40px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <div class="navbar">
+    <a href="students.html">Students</a>
+    <a href="attendance.html">Attendance</a>
+    <a href="form.html">Form</a>
+  </div>
+
+  <!-- Dashboard Section -->
+  <div class="dashboard">
+    <!-- Left Side: Cards -->
+    <div class="cards">
+      <div class="card students">
+        <div class="card-number">10</div>
+        <div>Students</div>
+        <a href="#" class="see-more">SEE MORE</a>
+      </div>
+
+      <div class="card present">
+        <div class="card-number">8</div>
+        <div>Present</div>
+        <a href="#" class="see-more">SEE MORE</a>
+      </div>
+
+      <div class="card absent">
+        <div class="card-number">2</div>
+        <div>Absent</div>
+        <a href="#" class="see-more">SEE MORE</a>
+      </div>
+    </div>
+
+    <!-- Right Side: Table -->
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Status</th>
+          <th>Email</th>
+          <th>Section</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>001</td><td>Juan Dela Cruz</td><td>Present</td><td>juan@example.com</td><td>A1</td></tr>
+        <tr><td>002</td><td>Maria Clara</td><td>Present</td><td>maria@example.com</td><td>A1</td></tr>
+        <tr><td>003</td><td>Jose Rizal</td><td>Present</td><td>jose@example.com</td><td>A1</td></tr>
+        <tr><td>004</td><td>Andres Bonifacio</td><td>Absent</td><td>andres@example.com</td><td>A1</td></tr>
+        <tr><td>005</td><td>Emilio Aguinaldo</td><td>Present</td><td>emilio@example.com</td><td>A1</td></tr>
+        <tr><td>006</td><td>Melchora Aquino</td><td>Present</td><td>melchora@example.com</td><td>A1</td></tr>
+        <tr><td>007</td><td>Antonio Luna</td><td>Absent</td><td>antonio@example.com</td><td>A1</td></tr>
+        <tr><td>008</td><td>Gregorio del Pilar</td><td>Present</td><td>gregorio@example.com</td><td>A1</td></tr>
+        <tr><td>009</td><td>Apolinario Mabini</td><td>Present</td><td>apolinario@example.com</td><td>A1</td></tr>
+        <tr><td>010</td><td>Marcelo H. del Pilar</td><td>Present</td><td>marcelo@example.com</td><td>A1</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <hr><br><br>
+
+  <!-- Department Section -->
+  <div class="department">
+    <div class="dept-label">Department</div>
+    <div class="dept-container">
+      <div class="arrow" onclick="prevDept()">&lt;</div>
+      <div id="dept-content">
+        <img id="dept-logo" src="img/ccs_logo.png" alt="CCS Logo">
+        <div class="dept-name" id="dept-name">CCS</div>
+      </div>
+      <div class="arrow" onclick="nextDept()">&gt;</div>
+    </div>
+  </div>
+
+  <script>
+    const departments = [
+      { name: "CCS", logo: "img/ccs_logo.png" },
+      { name: "COE", logo: "img/educ_logo.png"}
+    ];
+
+    let currentDept = 0;
+
+    function updateDepartment() {
+      document.getElementById("dept-logo").src = departments[currentDept].logo;
+      document.getElementById("dept-name").textContent = departments[currentDept].name;
+    }
+
+    function nextDept() {
+      currentDept = (currentDept + 1) % departments.length;
+      updateDepartment();
+    }
+
+    function prevDept() {
+      currentDept = (currentDept - 1 + departments.length) % departments.length;
+      updateDepartment();
+    }
+  </script>
+</body>
+</html>
